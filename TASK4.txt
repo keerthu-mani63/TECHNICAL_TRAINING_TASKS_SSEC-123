@@ -1,0 +1,38 @@
+#List
+student_name=["Priya","Nithilan","John"]
+print(student_name[0])
+#Negative Index is possible
+print(student_name[-2])
+#Updating the Element
+student_name[2]="Yuvaraj"
+print(student_name[2])
+#Adding the new Element
+student_name.append("Kaviya")
+print(student_name)
+#insert the elements
+student_name.insert(2,"Devi")
+print(student_name)
+#Adding one list to another
+extend_list=["Moonesh","Moni"]
+student_name.extend(extend_list)#student_name=extend_list
+print(student_name)
+#Remove the element based on the value
+student_name.remove("Kaviya")
+print(student_name)
+#Clear all elements from List
+student_name.clear()
+print(student_name)
+#Remove the element from last index
+extend_list.pop()
+print(extend_list)
+print("POP Execution done")
+
+#Dictionary : Key - Value Pair
+student={
+    "id":20,
+    "name":"priya",
+    "dept": "CSE"
+}
+
+for key,value in student.items():
+    print(key,value)

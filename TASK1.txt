@@ -1,0 +1,22 @@
+'''#Conditional Statement'''
+mark = float(input("Enter Marks:"))
+#Positive number
+if mark>0 and mark<=100:
+    print("You have given a valid input range!!!")
+    if mark>45 and mark<=50:
+        print("Grade F")
+    elif mark>50 and mark<=60:
+        print("Grade E")
+    elif mark>60 and mark<=70:
+        print("Grade D")
+    elif mark>70 and mark<=80:
+        print("Grade C")
+    elif mark>80 and mark<=90:
+        print("Grade B")
+    elif mark>90 and mark<=100:
+        print("Grade A")
+    else:
+        print("Grade : FAIL")
+#Negative or greater than 100
+else:
+    print("Invalid Input")'''

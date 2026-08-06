@@ -1,0 +1,11 @@
+'''Functions'''
+print(10+20)
+print(30+40)
+print(50+60)
+#With Fn
+def add(a,b):#parameterized function
+    print(a+b)
+
+a=int(input("Enter A:"))
+b=int(input("Enter B:"))
+add(a,b)

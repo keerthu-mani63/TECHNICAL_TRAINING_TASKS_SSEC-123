@@ -1,0 +1,24 @@
+create database Student;
+use Student;
+create table Student_Info(Reg_No INT primary key,
+Stu_Name varchar(25));
+
+create table Department(Dept_Id INT primary key,Dept_Name varchar(25));
+Alter table Student_Info Add Dept_Id INT;
+Alter table Student_Info ADD foreign Key(Dept_Id) 
+references Department(Dept_Id);
+Insert into Student_Info values(101,"Arun"),
+(102, "Karthick"),(103,"Vinay");
+select * from Student_Info;
+Insert into Department values(1001,"CSE"),
+(1002, "AIDS"),(1003,"EEE");
+select * from Department;
+Alter table Student_Info drop foreign key 
+student_info_ibfk_1;
+Alter table Student_Info drop column Dept_Id;
+Show Create table Student_Info;
+select * from Student_Info;
+update Student_Info set Dept_Id=1001 where Reg_No=101; 
+update Student_Info set Dept_Id=1002 where Reg_No=102;  
+Select S.Reg_No,S.Stu_Name,D.Dept_Name from Student_Info S
+Join Department D on S.Dept_Id=D.Dept_Id;

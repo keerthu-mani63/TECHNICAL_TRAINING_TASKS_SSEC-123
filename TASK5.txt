@@ -1,0 +1,20 @@
+import pandas as pd
+
+import matplotlib.pyplot as plt
+import openpyxl
+from dask.dataframe.methods import values
+excel=pd.read_excel('student.xlsx')
+print(excel)
+
+#=sum(e2:e11)
+total=excel['Marks'].sum()
+print("Total Sum",total)
+total_avg=excel['Marks'].mean()
+print("Total Avg",total_avg)
+pivot = pd.pivot_table(excel, values=['Marks','Attendance'], index='StudentID', aggfunc="mean")
+print(pivot)
+
+plt.bar(excel['Name'],excel['Marks'])
+plt.title('Student Details for the Subject')
+plt.show()
+print("Installation Success")

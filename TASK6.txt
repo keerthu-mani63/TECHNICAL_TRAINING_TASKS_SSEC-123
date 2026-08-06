@@ -1,0 +1,25 @@
+ PIE CHART Creation:
+# Import pandas
+import pandas as pd
+
+# Import matplotlib
+import matplotlib.pyplot as plt
+
+# Read Excel file
+df = pd.read_excel("student.xlsx")
+
+# Count students in each department
+department_count = df["Department"].value_counts()
+
+# Create pie chart
+plt.pie(
+    department_count,
+    labels=department_count.index,
+    autopct="%1.1f%%"
+)
+
+# Chart title
+plt.title("Department Distribution")
+
+# Display chart
+plt.show()
