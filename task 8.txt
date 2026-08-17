@@ -1,0 +1,177 @@
+# Import pandas library for data analysis
+import pandas as pd
+
+# Import numpy library for numerical operations
+import numpy as np
+
+# -------------------------------
+# Create Sample Student Dataset
+# -------------------------------
+
+# Create dictionary containing student data
+data = {
+    "Student": ["Priya", "Arun", "Ravi", "Kumar", "Divya", "Arun"],
+
+    # Study hours of students
+    "Study_Hours": [5, 4, 6, 3, 5, 4],
+
+    # Marks scored by students
+    # One value is missing (NaN)
+    "Marks": [85, 78, np.nan, 65, 88, 78]
+}
+
+# Convert dictionary into DataFrame
+df = pd.DataFrame(data)
+
+# Display original dataset
+print("ORIGINAL DATASET")
+print(df)
+
+# ----------------------------------
+# DATA QUALITY CHECKS
+# ----------------------------------
+
+print("\nDATA QUALITY CHECKS")
+
+# Check missing values
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+# Check duplicate rows
+print("\nDuplicate Records:")
+print(df.duplicated().sum())
+
+# ----------------------------------
+# HANDLE MISSING VALUES
+# ----------------------------------
+
+# Replace missing marks with average marks
+df["Marks"] = df["Marks"].fillna(df["Marks"].mean())
+
+print("\nDataset After Handling Missing Values")
+print(df)
+
+# ----------------------------------
+# DESCRIPTIVE STATISTICS
+# ----------------------------------
+
+print("\nDESCRIPTIVE STATISTICS")
+
+# Calculate mean
+mean_marks = df["Marks"].mean()
+print("Mean:", mean_marks)
+
+# Calculate median
+median_marks = df["Marks"].median()
+print("Median:", median_marks)
+
+# Calculate variance-Variance tells us how much the data values are spread out from the average (mean).
+#Spread out means how far the data values are from each other or from the average (mean).
+variance_marks = df["Marks"].var()
+print("Variance:", variance_marks)
+
+# Calculate standard deviationS-tandard deviation is the square root of variance.
+#It shows average distance from mean.
+std_marks = df["Marks"].std()
+print("Standard Deviation:", std_marks)
+# EDA
+# Import pandas library for data analysis
+import pandas as pd
+
+# Import numpy library for numerical operations
+import numpy as np
+
+# -----------------------------------
+# STEP 1 : CREATE DATASET
+# -----------------------------------
+
+# Create student dataset
+data = {
+    "Student": ["Priya", "Arun", "Ravi", "Kumar", "Divya", "Arun"],
+
+    # Study hours per day
+    "Study_Hours": [5, 4, 6, 3, 5, 4],
+
+    # Student marks
+    # One value is missing intentionally
+    "Marks": [85, 78, np.nan, 65, 88, 78],
+
+    # Attendance percentage
+    "Attendance": [90, 85, 95, 80, 92, 85]
+}
+
+# Convert dictionary into dataframe
+df = pd.DataFrame(data)
+
+# Display original dataset
+print("ORIGINAL DATASET")
+print(df)
+
+# -----------------------------------
+# STEP 2 : BASIC INFORMATION
+# -----------------------------------
+
+print("\nDATASET INFORMATION")
+
+# Number of rows and columns
+print("Shape:", df.shape)
+
+# Display column names
+print("Columns:", df.columns)
+
+# Display datatype of each column
+print(df.dtypes)
+
+# -----------------------------------
+# STEP 3 : FIRST FEW RECORDS
+# -----------------------------------
+
+print("\nFIRST 5 RECORDS")
+
+# Display first five records
+print(df.head())
+
+# -----------------------------------
+# STEP 4 : STATISTICAL SUMMARY
+# -----------------------------------
+
+print("\nSTATISTICAL SUMMARY")
+
+# Generate statistical report
+print(df.describe())
+
+# -----------------------------------
+# STEP 5 : CHECK MISSING VALUES
+# -----------------------------------
+
+print("\nMISSING VALUES")
+
+# Count missing values in each column
+print(df.isnull().sum())
+
+# -----------------------------------
+# STEP 6 : HANDLE MISSING VALUES
+# -----------------------------------
+
+# Replace missing marks with average marks
+df["Marks"] = df["Marks"].fillna(df["Marks"].mean())
+
+print("\nAFTER FILLING MISSING VALUES")
+print(df)
+
+# -----------------------------------
+# STEP 7 : CHECK DUPLICATE RECORDS
+# -----------------------------------
+
+print("\nDUPLICATE RECORDS")
+
+# Count duplicate rows
+print(df.duplicated().sum())
+
+print("\nCORRELATION")
+
+# Find relationship between study hours and marks
+correlation = df["Study_Hours"].corr(df["Marks"])
+
+print("Correlation Between Study Hours and Marks:")
+print(correlation)

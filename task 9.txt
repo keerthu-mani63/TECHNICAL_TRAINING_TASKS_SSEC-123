@@ -1,0 +1,25 @@
+import numpy as np
+import pandas as pd
+#Mean()-Finding the Average
+marks=[76,85,96,45]
+#Calculate the Avg
+mark_avg=np.mean(marks)
+print("Marks Average is: ",mark_avg)
+#Median()-middle value after sorting data
+sales=[100,250,300,345,575,600]
+#Calculate median
+sale_median=np.median(sales)
+print("Sales Median is: ",sale_median)
+#variance-how much value spread out from the mean
+mark_variance=np.var(marks)
+print("Marks Variance is: ",mark_variance)
+#Finding the range-Max-min
+max_mark=np.max(marks)
+min_mark=np.min(marks)
+range_marks=max_mark-min_mark
+print("Marks Range is: ",range_marks)
+#std()
+
+df=pd.DataFrame({"Marks":[100,95,np.nan,100]})
+print("Missing value:",df.isnull().sum())
+print("Duplicate Value:",df.duplicated())
